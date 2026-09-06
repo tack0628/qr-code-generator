@@ -2,6 +2,8 @@
 
 URL・通常テキスト・Wi-Fi情報からQRコードを生成し、PNGまたはSVGで保存できる静的Webツールです。生成処理はすべてブラウザ内で行われ、入力内容をサーバーへ送信しません。
 
+**公開ページ:** https://tack0628.github.io/qr-code-generator/
+
 ## 主な機能
 
 - URL、通常テキスト、Wi-Fi情報（SSID・パスワード・暗号化方式・非公開SSID）に対応
@@ -31,11 +33,9 @@ pnpm preview
 
 生成される`dist/`は完全な静的ファイルです。GitHub Pages、Cloudflare Pages、Netlifyなどへそのまま公開できます。Viteの`base`を相対パスに設定しているため、GitHub Pagesのリポジトリ配下でも動作します。
 
-## GitHub Pagesで公開する例
+## GitHub Pagesへの公開
 
-1. `pnpm build`を実行します。
-2. GitHub Actionsまたは`gh-pages`を使い、`dist/`をPagesへ公開します。
-3. Pagesの公開元をGitHub Actionsに設定します。
+`main`ブランチへ変更を送ると、GitHub Actionsが自動でビルドし、GitHub Pagesへ公開します。設定は`.github/workflows/deploy-pages.yml`にあります。
 
 ## プライバシー
 
